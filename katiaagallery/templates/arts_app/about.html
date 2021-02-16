@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "arts_app/base.html" %}
+{% load mathfilters %}
+{% load static %}
+{% block body_block%}
+  {{ form.media }}
+
+<div class="row">
+        <div class="col-md-8 mx-auto">
+
+          <article class="card mb-4">
+            <header class="card-header text-center">
+	     <h1 class="card-title">{{about.title}}</h1>
+            </header>
+            <div class="card-body">
+		{{about.body|safe}}
+           </div>
+          </article><!-- /.card -->
+
+        </div>
+      </div>
+
+{% endblock %}

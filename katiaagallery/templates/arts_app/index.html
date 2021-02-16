@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "arts_app/base.html" %}
+{% load mathfilters %}
+{% load static %}
+  {% block body_block%}
+    <div class="row">
+       {% for art in arts%}
+        {% if forloop.counter|mod:2 %}
+	 <div class="col-md-4">
+	{%endif%}
+          <article class="card mb-4">
+            <header class="card-header">
+              <div class="card-meta">
+		 <a href="#"><time class="timeago" datetime="{{ art.date}}">26 october 2019</time></a> in <a href="page-category.html">Journey</a>
+              </div>
+              <a href="arts/art-{{art.id}}">
+		<h4 class="card-title">{{art.title}}</h4>
+              </a>
+            </header>
+	    <a href="arts/art-{{art.id}}">
+		<img class="card-img" src="{{MEDIA_URL}}{{art.art_img}}" alt="" />
+            </a>
+            <div class="card-body">
+		<p class="card-text">{{art.story}} </p>
+            </div>
+          </article><!-- /.card -->
+        {% if  not forloop.counter|mod:2 %}
+         </div>
+        {%endif%}
+	{% endfor %}
+      </div>
+   {% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% extends "arts_app/base.html" %}
+{% load mathfilters %}
+{% load static %}
+
+{% block body_block%}
+
+  <div class="row">
+    <div class="col-md-9">
+     {% for art in filtered_arts %}
+       <article class="card mb-4">
+         <header class="card-header text-center">
+           <div class="card-meta">
+		   <a href="#"><time class="timeago" datetime="{{ art.date}}">{{ art.date}}</time></a> in <a href="/category-{{art.category.id}}">{{art.category}}</a>
+           </div>
+           <a href="/arts/art-{{art.id}}">
+	    <h1 class="card-title">{{art.title}}</h1>
+           </a>
+         </header>
+         <a href="/arts/art-{{art.id}}">
+          <img class="card-img" src="{{MEDIA_URL}}{{art.art_img}}" alt="" />
+         </a>
+         <div class="card-body">
+	  <p>{{art.story}}</p>
+	 </div>
+       </article><!-- /articl -->
+     {% endfor %}
+    </div> <!-- end of column md-9 --!>
+
+       <div class="col-md-3 ml-auto">
+          <aside class="sidebar">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h4 class="card-title">About</h4>
+                <p class="card-text">write some text about Katia </p>
+              </div>
+            </div><!-- /.card -->
+          </aside>
+
+	<aside class="sidebar sidebar-sticky">
+	   <div class="card mb-4">
+              <div class="card-body">
+                <h4 class="card-title">Categories</h4>
+		{% for category in categories%}
+                  <a class="btn btn-light btn-sm mb-1" href="/category-{{category.id}}">{{category.name}}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <h4 class="card-title">Recent arts</h4>
+		{% for art in recent_arts%}
+                <a href="/arts/art-{{art.id}}" class="d-inline-block">
+		  <h4 class="h6">{{art.title}}</h4>
+                  <img class="card-img" src="{{MEDIA_URL}}{{art.art_img}}" alt="">
+                </a>
+		<time class="timeago" datetime="{{ art.date}}" timeago-id="6">{{ art.date}}</time> in Lifestyle <br></br>
+                {% endfor %}
+	      </div>
+            </div><!-- /.card -->
+          </aside>
+
+        </div>
+      </div>
+{% endblock %}
