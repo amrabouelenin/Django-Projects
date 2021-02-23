@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+    <h1>Trips</h1>
+    {% for message in messages %}
+     <div {% if message.tags %} class="alert alert-success {{ message.tags }}" role="alert">{{ message }} </div>
+    {% endif %}
+    {% endfor %}
+
+<div class="card card-body border-light shadow-sm table-wrapper table-responsive pt-0">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="border-0">Trip Id</th>
+        <th class="border-0">From Station</th>
+        <th class="border-0">To Station</th>
+        <th class="border-0">Passenger</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+    {% for trip in object_list %}
+      <tr>
+	<td><span class="font-weight-normal">{{trip.id}}</span></td>
+	<td><span class="font-weight-normal">{{trip.from_station}}</span></td>
+	<td><span class="font-weight-normal">{{trip.to_station}}</span></td>
+	<td><span class="font-weight-normal">{{trip.passenger}}</span></td>
+     </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+ </div>
+</div>
+{% endblock %}

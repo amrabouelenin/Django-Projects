@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+    <h1>Stations</h1>
+    {% for message in messages %}
+     <div {% if message.tags %} class="alert alert-success {{ message.tags }}" role="alert">{{ message }} </div>
+    {% endif %}
+    {% endfor %}
+
+<div class="card card-body border-light shadow-sm table-wrapper table-responsive pt-0">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="border-0">Station Id</th>
+        <th class="border-0">Station Name</th>
+        <th class="border-0">Location</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+    {% for station in object_list %}
+      <tr>
+	<td><span class="font-weight-normal">{{station.station_id}}</span></td>
+	<td><span class="font-weight-normal">{{station.station_name}}</span></td>
+	<td><span class="font-weight-normal">{{station.location}}</span></td>
+     </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+ </div>
+</div>
+{% endblock %}

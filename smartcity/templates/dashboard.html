@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% block content %}
+{% if messages %}
+  {% for message in messages %}
+    <div  class="alert alert-info {{ message.tags }}" role="alert">{{ message }} </div>
+  {% endfor %}
+{% endif %}
+
+<div class="row justify-content-md-center">
+  <div class="col-12 col-sm-6 col-xl-4 mb-4">
+    <div class="card border-light shadow-sm">
+      <div class="card-body">
+        <div class="row d-block d-xl-flex align-items-center">
+          <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+            <div class="icon icon-shape icon-md icon-shape-primary rounded mr-4 mr-sm-0"><span class="fas fa-chart-line"></span></div>
+            <div class="d-sm-none">
+              <h2 class="h5">Total Trips</h2>
+	      <h3 class="mb-1">{{trips_count }}</h3></div>
+          </div>
+          <div class="col-12 col-xl-7 px-xl-0">
+            <div class="d-none d-sm-block">
+              <h2 class="h5">Total Trips</h2>
+	      <h3 class="mb-1">{{trips_count}}</h3></div><small>Feb 1 - Apr 1, <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> WorldWide</small>
+            <div class="small mt-2"><span class="fas fa-angle-up text-success"></span> <span class="text-success font-weight-bold">18.2%</span> Since last month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-xl-4 mb-4">
+    <div class="card border-light shadow-sm">
+      <div class="card-body">
+        <div class="row d-block d-xl-flex align-items-center">
+          <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+            <div class="icon icon-shape icon-md icon-shape-tertiary rounded mr-4"><span class="fas fa-users"></span></div>
+            <div class="d-sm-none">
+              <h2 class="h5">New Users</h2>
+	      <h3 class="mb-1">{{users_count}}</h3></div>
+          </div>
+          <div class="col-12 col-xl-7 px-xl-0">
+            <div class="d-none d-sm-block">
+              <h2 class="h5">Number of Passengers</h2>
+              <h3 class="mb-1">{{users_count}}</h3></div><small>Feb 1 - Apr 1, <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small>
+            <div class="small mt-2"><span class="fas fa-angle-up text-success"></span> <span class="text-success font-weight-bold">28.2%</span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-12 col-sm-6 col-xl-4 mb-4">
+    <div class="card border-light shadow-sm">
+      <div class="card-body">
+        <div class="row d-block d-xl-flex align-items-center">
+          <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+            <div class="icon icon-shape icon-md icon-shape-primary rounded mr-4"><span class="fas fa-map-marker"></span></div>
+            <div class="d-sm-none">
+              <h2 class="h5">Activted Station</h2>
+	      <h3 class="mb-1">{{stations_count}}</h3></div>
+          </div>
+          <div class="col-12 col-xl-7 px-xl-0">
+            <div class="d-none d-sm-block">
+              <h2 class="h5">Activated Stations</h2>
+              <h3 class="mb-1">{{stations_count}}</h3></div><small>Feb 1 - Apr 1, <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small>
+            <div class="small mt-2"><span class="fas fa-angle-up text-success"></span> <span class="text-success font-weight-bold">28.2%</span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 
+  <div class="col-12 col-sm-6 col-xl-4 mb-4">
+    <div class="card border-light shadow-sm">
+      <div class="card-body d-flex flex-row align-items-center flex-0 border-bottom">
+        <div class="d-block">
+          <div class="h6 font-weight-normal text-gray mb-2">App Usage</div>
+          <h2 class="h3">452</h2>
+          <div class="small mt-2"><span class="fas fa-angle-up text-success"></span> <span class="text-success font-weight-bold">18.2%</span></div>
+        </div>
+        <div class="d-block ml-auto">
+          <div class="d-flex align-items-center text-right mb-2"><span class="shape-xs rounded-circle bg-primary mr-2"></span> <span class="font-weight-normal small">All</span></div>
+          <div class="d-flex align-items-center text-right"><span class="shape-xs rounded-circle bg-secondary mr-2"></span> <span class="font-weight-normal small">Widgets</span></div>
+        </div>
+      </div>
+      <div class="card-body p-2">
+        <div class="ct-chart-ranking ct-golden-section ct-series-a">
+          <div class="chartist-tooltip"></div>
+          <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;">
+            <g class="ct-grids">
+              <line x1="10" x2="10" y1="15" y2="198.1999969482422" class="ct-grid ct-horizontal"></line>
+              <line x1="60.332144601004465" x2="60.332144601004465" y1="15" y2="198.1999969482422" class="ct-grid ct-horizontal"></line>
+              <line x1="110.66428920200893" x2="110.66428920200893" y1="15" y2="198.1999969482422" class="ct-grid ct-horizontal"></line>
+              <line x1="160.9964338030134" x2="160.9964338030134" y1="15" y2="198.1999969482422" class="ct-grid ct-horizontal"></line>
+              <line x1="211.32857840401786" x2="211.32857840401786" y1="15" y2="198.1999969482422" class="ct-grid ct-horizontal"></line>
+              <line x1="261.6607230050223" x2="261.6607230050223" y1="15" y2="198.1999969482422" class="ct-grid ct-horizontal"></line>
+              <line x1="311.9928676060268" x2="311.9928676060268" y1="15" y2="198.1999969482422" class="ct-grid ct-horizontal"></line>
+            </g>
+            <g>
+              <g class="ct-series ct-series-a">
+                <line x1="27.666072300502236" x2="27.666072300502236" y1="198.1999969482422" y2="106.5999984741211" class="ct-bar" ct:value="5"></line>
+                <line x1="77.9982169015067" x2="77.9982169015067" y1="198.1999969482422" y2="124.91999816894531" class="ct-bar" ct:value="4"></line>
+                <line x1="128.33036150251115" x2="128.33036150251115" y1="198.1999969482422" y2="143.23999786376953" class="ct-bar" ct:value="3"></line>
+                <line x1="178.66250610351562" x2="178.66250610351562" y1="198.1999969482422" y2="69.95999908447266" class="ct-bar" ct:value="7"></line>
+                <line x1="228.9946507045201" x2="228.9946507045201" y1="198.1999969482422" y2="106.5999984741211" class="ct-bar" ct:value="5"></line>
+                <line x1="279.3267953055245" x2="279.3267953055245" y1="198.1999969482422" y2="15" class="ct-bar" ct:value="10"></line>
+                <line x1="329.658939906529" x2="329.658939906529" y1="198.1999969482422" y2="143.23999786376953" class="ct-bar" ct:value="3"></line>
+              </g>
+              <g class="ct-series ct-series-b">
+                <line x1="42.666072300502236" x2="42.666072300502236" y1="198.1999969482422" y2="143.23999786376953" class="ct-bar" ct:value="3"></line>
+                <line x1="92.9982169015067" x2="92.9982169015067" y1="198.1999969482422" y2="161.55999755859375" class="ct-bar" ct:value="2"></line>
+                <line x1="143.33036150251115" x2="143.33036150251115" y1="198.1999969482422" y2="33.31999969482422" class="ct-bar" ct:value="9"></line>
+                <line x1="193.66250610351562" x2="193.66250610351562" y1="198.1999969482422" y2="106.5999984741211" class="ct-bar" ct:value="5"></line>
+                <line x1="243.9946507045201" x2="243.9946507045201" y1="198.1999969482422" y2="124.91999816894531" class="ct-bar" ct:value="4"></line>
+                <line x1="294.3267953055245" x2="294.3267953055245" y1="198.1999969482422" y2="88.27999877929688" class="ct-bar" ct:value="6"></line>
+                <line x1="344.658939906529" x2="344.658939906529" y1="198.1999969482422" y2="124.91999816894531" class="ct-bar" ct:value="4"></line>
+              </g>
+            </g>
+            <g class="ct-labels">
+              <foreignObject style="overflow: visible;" x="10" y="203.1999969482422" width="50.332144601004465" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 50px; height: 20px;">Mon</span></foreignObject>
+              <foreignObject style="overflow: visible;" x="60.332144601004465" y="203.1999969482422" width="50.332144601004465" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 50px; height: 20px;">Tue</span></foreignObject>
+              <foreignObject style="overflow: visible;" x="110.66428920200893" y="203.1999969482422" width="50.33214460100446" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 50px; height: 20px;">Wed</span></foreignObject>
+              <foreignObject style="overflow: visible;" x="160.9964338030134" y="203.1999969482422" width="50.33214460100447" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 50px; height: 20px;">Thu</span></foreignObject>
+              <foreignObject style="overflow: visible;" x="211.32857840401786" y="203.1999969482422" width="50.33214460100447" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 50px; height: 20px;">Fri</span></foreignObject>
+              <foreignObject style="overflow: visible;" x="261.6607230050223" y="203.1999969482422" width="50.332144601004444" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 50px; height: 20px;">Sat</span></foreignObject>
+              <foreignObject style="overflow: visible;" x="311.9928676060268" y="203.1999969482422" width="50.33214460100447" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 50px; height: 20px;">Sun</span></foreignObject>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6 col-xl-4 mb-4">
+    <div class="card border-light shadow-sm">
+      <div class="card-body d-flex flex-row align-items-center flex-0 border-bottom">
+        <div class="d-block">
+          <div class="h6 font-weight-normal text-gray mb-2">Traffic by Station</div>
+          <h2 class="h4">Fabryczna</h2>
+          <div class="small mt-2"><span class="fas fa-angle-up text-success"></span> <span class="text-success font-weight-bold">10.57%</span></div>
+        </div>
+        <div class="d-block ml-auto">
+          <div class="d-flex align-items-center text-right mb-2"><span class="shape-xs rounded-circle bg-primary mr-2"></span> <span class="font-weight-normal small">Fabryczna</span></div>
+          <div class="d-flex align-items-center text-right mb-2"><span class="shape-xs rounded-circle bg-secondary mr-2"></span> <span class="font-weight-normal small">Wólczańska - Skorupki</span></div>
+          <div class="d-flex align-items-center text-right mb-2"><span class="shape-xs rounded-circle bg-tertiary mr-2"></span> <span class="font-weight-normal small">Piotrkowiska</span></div>
+        </div>
+      </div>
+      <div class="card-body p-2">
+        <div class="ct-chart-traffic-source ct-golden-section ct-series-a">
+          <div class="chartist-tooltip" style="top: -5.39999px; left: 252.662px;"></div>
+          <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-pie" style="width: 100%; height: 100%;">
+            <g class="ct-series ct-series-a">
+              <path d="M78.198,132.482A111.6,111.6,0,1,0,188.663,5L188.663,116.6Z" class="ct-slice-pie" ct:value="80"></path>
+            </g>
+            <g class="ct-series ct-series-b">
+              <path d="M128.327,22.716A111.6,111.6,0,0,0,78.255,132.868L188.663,116.6Z" class="ct-slice-pie" ct:value="20"></path>
+            </g>
+            <g class="ct-series ct-series-c">
+              <path d="M188.663,5A111.6,111.6,0,0,0,128,22.927L188.663,116.6Z" class="ct-slice-pie" ct:value="10"></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6 col-xl-4 mb-4">
+    <div class="card border-light shadow-sm">
+      <div class="card-body d-flex flex-row align-items-center flex-0 border-bottom">
+        <div class="d-block">
+          <div class="h6 font-weight-normal text-gray mb-2">Organic vs Paid Search</div>
+          <h2 class="h4">Trafic Distibution</h2>
+          <div class="small mt-2"><span class="fas fa-angle-up text-success"></span> <span class="text-success font-weight-bold">$10.57%</span></div>
+        </div>
+        <div class="d-block ml-auto">
+          <div class="d-flex align-items-center text-right mb-2"><span class="shape-xs rounded-circle bg-secondary mr-2"></span> <span class="font-weight-normal small">Organic</span></div>
+          <div class="d-flex align-items-center text-right mb-2"><span class="shape-xs rounded-circle bg-tertiary mr-2"></span> <span class="font-weight-normal small">Direct</span></div>
+          <div class="d-flex align-items-center text-right mb-2"><span class="shape-xs rounded-circle bg-primary mr-2"></span> <span class="font-weight-normal small">Paid</span></div>
+        </div>
+      </div>
+      <div class="card-body p-2">
+        <div class="ct-chart-distribution ct-golden-section ct-series-a">
+          <div class="chartist-tooltip"></div>
+          <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;">
+            <g class="ct-series ct-series-a">
+              <path d="M230.469,220.074A111.6,111.6,0,0,0,274.153,44.865L220.53,89.86A41.6,41.6,0,0,1,204.246,155.171Z" class="ct-slice-donut-solid" ct:value="30"></path>
+            </g>
+            <g class="ct-series ct-series-b">
+              <path d="M146.856,13.126A111.6,111.6,0,0,0,230.83,219.927L204.381,155.116A41.6,41.6,0,0,1,173.079,78.029Z" class="ct-slice-donut-solid" ct:value="50"></path>
+            </g>
+            <g class="ct-series ct-series-c">
+              <path d="M274.153,44.865A111.6,111.6,0,0,0,146.495,13.273L172.944,78.084A41.6,41.6,0,0,1,220.53,89.86Z" class="ct-slice-donut-solid" ct:value="20"></path>
+            </g>
+            <g>
+              <text dx="262.98715725570315" dy="135.13121530791213" text-anchor="middle" class="ct-label">30%</text>
+              <text dx="117.64022425847" dy="145.29486295817566" text-anchor="middle" class="ct-label">50%</text>
+              <text dx="207.19372293730663" dy="42.27534732193354" text-anchor="middle" class="ct-label">20%</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
