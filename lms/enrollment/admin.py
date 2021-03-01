@@ -1,3 +1,4 @@
 from django.contrib import admin
+from enrollment.models import Nomination
 
-# Register your models here.
+admin.site.register(Nomination)
