@@ -45,7 +45,31 @@ INSTALLED_APPS = [
     'course_vendors',
     'enrollment',
     'django_countries',
+    'phonenumber_field',
+    'djrichtextfield',
+    'django_fsm',
 ]
+
+
+DJRICHTEXTFIELD_CONFIG = {
+    'js': [
+        '//code.jquery.com/jquery-3.5.1.min.js',
+        '//stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js',
+        '//cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js',
+    ],
+    'css': {
+        'all': [
+            '//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css',
+            '//cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css',
+        ]
+    },
+    'init_template': 'djrichtextfield/init//summernote.js',
+    'settings': {
+        'followingToolbar': False,
+        'minHeight': 250,
+        'width': 700,
+    }
+}
 
 AUTH_USER_MODEL = "userprofile.User" 
 
@@ -83,13 +107,22 @@ WSGI_APPLICATION = 'lms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_lms',
+        'USER': 'django_lms',
+        'PASSWORD': 'django_lms@#Yn34',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
