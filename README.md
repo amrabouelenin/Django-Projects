@@ -9,8 +9,8 @@ and trying to see what are the pros and cons for every framework.
 
 Links for the websites
 
-# Katiaagallery  - > https://katia.new-track.net/
+* Katiaagallery  - > https://katia.new-track.net/
 
-# SmartCity      -> https://www.smartcity.new-track.net/
+* SmartCity      -> https://www.smartcity.new-track.net/
 
-# Lms            -> under configuration
+* Lms            -> under configuration
